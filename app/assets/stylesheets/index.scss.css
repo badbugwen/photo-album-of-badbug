@@ -1,0 +1,10 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.container {
+  border: px solid #DCDCDC;
+  border-radius: 10px;
+  margin: 15px 15px;
+  padding:15px;
+  background: #ffffff;
+}
