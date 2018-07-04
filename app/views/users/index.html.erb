@@ -1,0 +1,28 @@
+<div class='container'>
+  <table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Avatar</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Age</th>
+      <th scope="col">Region</th>
+      <th scope="col">Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <th scope="row"><%= img_tag user.avatar, width: '100px',  class: "rounded mr-3" %></th>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.gender %></td>
+      <td><%= user.age %></td>
+      <td><%= user.region %></td>
+      <td><%= user.phone %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>

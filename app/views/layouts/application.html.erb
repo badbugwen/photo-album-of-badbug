@@ -9,6 +9,31 @@
   </head>
 
   <body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #e3f2fd;">
+      <%= link_to'My Family Album', root_path, class: "navbar-brand" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <%= link_to'All Users', users_path, class:"nav-link" %>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+        <% if current_user %>
+          <li class="nav-item">
+            <%= link_to'登出', destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to'註冊', new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to'登入', new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>  
+        </ul>
+      </div>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
