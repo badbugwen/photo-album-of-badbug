@@ -14,7 +14,7 @@
   <tbody>
     <% @users.each do |user| %>
     <tr>
-      <th scope="row"><%= img_tag user.avatar, width: '100px',  class: "rounded mr-3" %></th>
+      <th scope="row"><%= image_tag user.avatar, width: '100px',  class: "rounded mr-3" %></th>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
       <td><%= user.gender %></td>
