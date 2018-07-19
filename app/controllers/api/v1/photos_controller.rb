@@ -8,10 +8,10 @@ class Api::V1::PhotosController < ApiController
           date: photo.date,
           description: photo.description
         }
-      end  
+      end
     }
-  end 
-  
+  end
+
   def show
     @photo = Photo.find_by(id: params[:id])
     if !@photo
@@ -19,12 +19,12 @@ class Api::V1::PhotosController < ApiController
         message: "Can't find the photo!",
         status: 400
       }
-    else  
+    else
       render json: {
         title:@photo.title,
         date: @photo.date,
         description: @photo.description
       }
-    end  
+    end
   end
 end
