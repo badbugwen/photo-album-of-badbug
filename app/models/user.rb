@@ -35,4 +35,5 @@ class User < ApplicationRecord
     user.password = Devise.friendly_token[0,20]
     user.save!
     return user
+  end  
 end
