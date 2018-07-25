@@ -40,6 +40,8 @@ gem 'jquery-rails'
 # for using API
 gem 'rest-client'
 
+gem 'omniauth-facebook'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 gem 'sqlite3'
