@@ -19,6 +19,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav">
         <% if current_user %>
+          <p class="pull-right">API Token: <code><%= current_user.authentication_token %></code></p>
           <li class="nav-item">
             <%= link_to'登出', destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
