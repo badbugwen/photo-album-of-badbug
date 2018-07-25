@@ -1,4 +1,5 @@
 class Api::V1::PhotosController < ApiController
+  before_action :authenticate_user!, except: :index
   def index
     @photos = Photo.all
   end
