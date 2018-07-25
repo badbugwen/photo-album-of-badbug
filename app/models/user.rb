@@ -13,17 +13,18 @@ class User < ApplicationRecord
 
   def self.from_omniauth(auth)
     # Case 1: Find exisiting user by facebook
+    user = User.find_fb_uid( auth.uid)
     if user
-      user.fb_token = User.find_by_email( auth.info.email)
-      user.dave!
+      user.fb_token = auth.credentials.token
+      user.save!
       return user
-    end  
+    end
 
     #Case 2: Find exisiting user by email
     exisiting_user = User.find_by_email(auth.info.email)
     if exisiting_user
       exisiting_user.fb_uid = auth.uid
-      exisiting_user.fb_token = auth.credentials.credentials.token
+      exisiting_user.fb_token = auth.credentials.token
       exisiting_user.save!
       return exisiting_user
     end
