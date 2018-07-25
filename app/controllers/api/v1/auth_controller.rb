@@ -1,5 +1,6 @@
 class Api::V1::AuthController < ApiController
   before_action :authenticate_user!, only: :logout
+  
   def login
     if params[:email] && parmas[:password]
       user = User.find_by_email(params[:email])
