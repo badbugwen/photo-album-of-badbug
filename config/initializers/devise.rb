@@ -3,6 +3,7 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  fb_config = Rails.application.config_for(:facebook)
   #facebook ccount sign in
   config.omniauth :facebook, fb_config[:app_id], fb_config[secret], scope:
    "public_profile, email", info_fields: "email,name", callback_url: "https://photo-album-of-badbug.herokuapp.com/users/auth/facebook/callback"
